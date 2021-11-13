@@ -7,6 +7,7 @@ var game_over = false
 
 signal s_game_over
 signal s_game_start
+signal s_game_score
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("flappy") and game_over == false:
@@ -33,9 +34,16 @@ func play():
 func flappy():
 	linear_velocity.y = -320.0
 	angular_velocity = -15.0
-	$AudioStreamPlayer.play()
+	$Wing.play()
 	
 func stop():
+	if game_over == false:
+		$Hit.play()
+	
 	game_over = true
 	$AnimationPlayer.stop()
 	emit_signal("s_game_over")
+	
+func score():
+	$Point.play()
+	emit_signal("s_game_score")

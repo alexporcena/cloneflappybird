@@ -20,7 +20,7 @@ func _on_Pipe_body_entered(body):
 
 func _on_PointArea_body_entered(body):
 	if body is Player and game_over == false:
-		pass
+		body.score()
 		
 func stop():
 	set_physics_process(false)
