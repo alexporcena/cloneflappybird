@@ -1,6 +1,7 @@
 extends Node2D
 
 var new_score = 0
+var GameOverMenu = preload("res://Scenes/GameOverMenu.tscn")
 
 func _ready():
 	$Player.connect("s_game_over", self, "game_over")
@@ -10,6 +11,15 @@ func _ready():
 func game_over():
 	$Ground.stop()
 	$ObstacleFactory.stop()
+	
+	AutoLoad.score = new_score
+	if AutoLoad.best < new_score:
+		AutoLoad.best = new_score
+	
+	$HUD/Label.hide()
+	
+	var game_over_menu = GameOverMenu.instance()
+	add_child(game_over_menu)
 	
 func start():
 	$ObstacleFactory.start()

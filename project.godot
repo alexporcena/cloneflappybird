@@ -24,6 +24,10 @@ config/name="CloneFlappyBird"
 run/main_scene="res://Scenes/Game.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+AutoLoad="*res://Scripts/AutoLoad.gd"
+
 [display]
 
 window/size/width=288
