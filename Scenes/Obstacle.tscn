@@ -21,6 +21,9 @@ position = Vector2( 0, 306 )
 position = Vector2( 0, 206 )
 rotation = 3.14159
 
+[node name="Sprite" parent="TopPipe" index="0"]
+flip_h = true
+
 [node name="PointArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PointArea"]

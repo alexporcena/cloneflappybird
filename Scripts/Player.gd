@@ -29,7 +29,7 @@ func play():
 		emit_signal("s_game_start")
 		is_playing = true
 		gravity_scale = 8.0
-		$AnimationPlayer.play("fly")
+		$AnimacaoPassaro.play("fly")
 
 func flappy():
 	linear_velocity.y = -320.0
@@ -41,7 +41,7 @@ func stop():
 		$Hit.play()
 	
 	game_over = true
-	$AnimationPlayer.stop()
+	$AnimacaoPassaro.stop()
 	emit_signal("s_game_over")
 	
 func score():
