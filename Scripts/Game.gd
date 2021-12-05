@@ -13,8 +13,8 @@ func game_over():
 	$ObstacleFactory.stop()
 	
 	AutoLoad.score = new_score
-	if AutoLoad.best < new_score:
-		AutoLoad.best = new_score
+	if AutoLoad.get_high_score() < new_score:
+		AutoLoad.set_high_score(new_score)
 	
 	$HUD/Label.hide()
 	
